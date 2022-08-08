@@ -1,0 +1,8 @@
+<h1>Gyms</h1>
+
+<ol>
+  <% @gyms.each do |gym| %>
+  <li><%= link_to gym.name, gym_routes_path(gym) %></li>
+  <% end %>
+</ol>
+
