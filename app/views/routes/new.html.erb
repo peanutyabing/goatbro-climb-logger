@@ -1,0 +1,23 @@
+<%= form_with(model: @route, url: gym_routes_path(@gym)) do |form| %>
+  <div>
+    <%= form.label :grade, 'Grade:' %>
+    <%= form.text_field :grade %>
+  </div>
+  <div>
+    <%= form.label :color, 'Color:' %>
+    <%= form.text_field :color %>
+  </div>
+  <div>
+    <%= form.label :name, 'Name:' %>
+    <%= form.text_field :name %>
+  </div>
+  <div>
+    <%= form.label :discipline, 'Discipline:' %>
+    <%= form.select :discipline, Route.disciplines.map { |k, _| [k.humanize, k] }.to_h %>
+  </div>
+  <div>
+    <%= form.label :lane, 'Lane #:' %>
+    <%= form.text_field :lane %>
+  </div>
+  <%= form.submit %>
+<% end %>
