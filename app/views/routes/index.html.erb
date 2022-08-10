@@ -1,8 +1,14 @@
 <h1>routes</h1>
-<ol>
-  <% @routes.each do |route| %>
-  <li><%= route.color %> <%= route.grade %></li>
-  <% end %>
-</ol>
+
+<% @lanes.each do |lane, routes| %>
+<div class="lane">
+  <h2>lane <%= lane %> </h2>
+  <ol>
+    <% routes.each do |route| %>
+    <li class="<%= route.color %>"><%= route.grade %></li>
+    <% end %>
+  </ol>
+</div>
+<% end %>
 
 <%= link_to 'Add new route', new_gym_route_path(@gym) %>

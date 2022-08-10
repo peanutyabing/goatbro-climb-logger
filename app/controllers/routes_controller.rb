@@ -1,6 +1,6 @@
 class RoutesController < ApplicationController
   def index
-    @routes = find_gym.routes
+    @lanes = find_gym.routes.group_by(&:lane)
     @gym = find_gym
   end
 
