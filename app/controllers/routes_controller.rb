@@ -19,6 +19,10 @@ class RoutesController < ApplicationController
     end
   end
 
+  def show
+    @route = find_gym.routes.find(params[:id])
+  end
+
   private
 
   def find_gym

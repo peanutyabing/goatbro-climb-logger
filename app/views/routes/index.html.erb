@@ -5,7 +5,7 @@
   <h2>lane <%= lane %> </h2>
   <ol>
     <% routes.each do |route| %>
-    <li class="<%= route.color %>"><%= route.grade %></li>
+    <li class="<%= route.color %>"><%= link_to route.grade, gym_route_path(@gym, route) %></li>
     <% end %>
   </ol>
 </div>
