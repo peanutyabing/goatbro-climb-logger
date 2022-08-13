@@ -1,0 +1,13 @@
+<%= form_with(model: @review, url: gym_route_reviews_path(@gym, @route)) do |form| %>
+  <div>
+    <%= form.label :rating, 'Rating:' %>
+    <%= form.text_field :rating %>
+  </div>
+  
+  <div>
+    <%= form.label :comment, 'Comment:' %>
+    <%= form.text_field :comment %>
+  </div>
+ 
+  <%= form.submit %>
+<% end %>
