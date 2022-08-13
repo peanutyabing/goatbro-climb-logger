@@ -1,5 +1,6 @@
 class Route < ApplicationRecord
   belongs_to :gym
+  has_many :reviews
 
   validates :grade, presence: true
   validates :color, presence: true
