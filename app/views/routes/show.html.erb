@@ -1,1 +1,14 @@
+<h2>Reviews</h2>
+
+<div>
+  Average rating: <%= @route.reviews.average(:rating).round(1) %>
+</div>
+
+<ol>
+  <% @route.reviews.order(created_at: :desc).each do |review| %>
+  <li>Rating: <%= review.rating %></li>
+  <% end %>
+</ol>
+
+
 <%= link_to 'Add review', new_gym_route_review_path(@gym, @route) %>
